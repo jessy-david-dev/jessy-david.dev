@@ -2,21 +2,21 @@
 
 Portfolio personnel de développeur web, construit avec **Next.js** et un ensemble de technologies modernes.
 
-![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?style=flat-square&logo=tailwind-css)
+![Next.js](https://img.shields.io/badge/Next.js-16.1.5-black?style=flat-square&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-blue?style=flat-square&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.18-38B2AC?style=flat-square&logo=tailwind-css)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
 ---
 
 ## ✨ Fonctionnalités
 
--   ⚡ **Next.js App Router** & Server Components
--   🎨 **Tailwind CSS** pour un design moderne et responsive
--   📧 **Formulaire de contact** via API Route
--   🗺️ **Sitemap dynamique** pour un SEO optimisé
--   🌐 **PWA Ready** (manifest + icônes)
--   🔥 **Animations fluides** et transitions modernes
+- ⚡ **Next.js App Router** & Server Components
+- 🎨 **Tailwind CSS** pour un design moderne et responsive
+- 📧 **Formulaire de contact** via API Route
+- 🗺️ **Sitemap dynamique** pour un SEO optimisé
+- 🌐 **PWA Ready** (manifest + icônes)
+- 🔥 **Animations fluides** et transitions modernes
 
 ---
 
@@ -115,9 +115,9 @@ Ce projet est sous licence **MIT** – voir le fichier [LICENSE](LICENSE) pour p
 
 **Jessy David**
 
--   🌐 Website : [jessy-david.dev](https://jessy-david.dev)
--   🐙 GitHub : [@jessydavid-dev](https://github.com/jessydavid-dev)
--   📧 Email : [contact@jessy-david.dev](mailto:contact@jessy-david.dev)
+- 🌐 Website : [jessy-david.dev](https://jessy-david.dev)
+- 🐙 GitHub : [@jessydavid-dev](https://github.com/jessydavid-dev)
+- 📧 Email : [contact@jessy-david.dev](mailto:contact@jessy-david.dev)
 
 ---
 
