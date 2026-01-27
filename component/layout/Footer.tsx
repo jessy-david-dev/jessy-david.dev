@@ -2,7 +2,15 @@
 
 import { siteConfig } from "@/config/site";
 import { motion, type Variants } from "framer-motion";
-import { Github, Heart, Linkedin, Mail } from "lucide-react";
+import {
+  Cookie,
+  Github,
+  Heart,
+  Linkedin,
+  Mail,
+  Scale,
+  Shield,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,6 +22,19 @@ const socials = [
     icon: Linkedin,
   },
   { name: "Email", href: "mailto:contact@jessy-david.dev", icon: Mail },
+];
+
+const legalLinks = [
+  {
+    name: "Mentions légales",
+    href: "/mentions-legales",
+    icon: Scale,
+  },
+  {
+    name: "Politique de confidentialité",
+    href: "/politique-de-confidentialite",
+    icon: Shield,
+  },
 ];
 
 const containerVariants: Variants = {
@@ -111,6 +132,32 @@ export default function Footer() {
                 >
                   QuantumCraft Studios
                 </Link>
+              </motion.div>
+
+              {/* Liens légaux */}
+              <motion.div
+                variants={itemVariants}
+                className="flex flex-wrap items-center justify-center gap-4"
+              >
+                {legalLinks.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="flex items-center gap-1.5 text-slate-500 hover:text-blue-400 text-sm transition-colors"
+                  >
+                    <item.icon className="w-3.5 h-3.5" />
+                    {item.name}
+                  </Link>
+                ))}
+                <button
+                  onClick={() =>
+                    window.dispatchEvent(new Event("openCookieSettings"))
+                  }
+                  className="flex items-center gap-1.5 text-slate-500 hover:text-blue-400 text-sm transition-colors cursor-pointer"
+                >
+                  <Cookie className="w-3.5 h-3.5" />
+                  Gérer les cookies
+                </button>
               </motion.div>
             </motion.div>
 

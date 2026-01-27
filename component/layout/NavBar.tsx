@@ -25,7 +25,7 @@ interface NavLink {
 
 // Configuration des liens de navigation avec leurs icônes
 const navLinks: NavLink[] = [
-  { href: "#home", label: "Accueil", icon: Home },
+  { href: "/", label: "Accueil", icon: Home },
   { href: "#about", label: "À propos", icon: User },
   { href: "#skills", label: "Compétences", icon: Code2 },
   { href: "#projects", label: "Projets", icon: FolderKanban },
@@ -90,7 +90,7 @@ export default function NavBar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo et nom - lien vers l'accueil */}
           <SmoothLink
-            href="#home"
+            href="/"
             className="relative group flex items-center gap-3"
             onClick={handleLinkClick}
           >

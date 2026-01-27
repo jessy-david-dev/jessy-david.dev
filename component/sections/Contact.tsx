@@ -291,6 +291,35 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* Consentement RGPD */}
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="rgpd-consent"
+                    name="rgpd-consent"
+                    required
+                    disabled={isSubmitting}
+                    className="mt-1 w-4 h-4 rounded border-slate-600 bg-slate-900/50 text-blue-500 focus:ring-blue-500 focus:ring-offset-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                  />
+                  <label
+                    htmlFor="rgpd-consent"
+                    className="text-sm text-slate-400 cursor-pointer"
+                  >
+                    J&apos;accepte que mes données personnelles (nom, email,
+                    message) soient collectées et traitées pour répondre à ma
+                    demande, conformément à la{" "}
+                    <a
+                      href="/politique-de-confidentialite"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:text-blue-300 underline transition-colors"
+                    >
+                      Politique de Confidentialité
+                    </a>
+                    . *
+                  </label>
+                </div>
+
                 {/* Message d'erreur */}
                 {error && (
                   <motion.div
