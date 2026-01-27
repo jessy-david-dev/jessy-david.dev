@@ -120,12 +120,12 @@ export default function PolitiqueDeConfidentialite() {
             </div>
             <div className="text-slate-300 space-y-4">
               <p>
-                Je collecte les données personnelles suivantes dans le cadre de
-                l&apos;utilisation de ce site :
+                Les données personnelles suivantes peuvent être collectées dans
+                le cadre de l&apos;utilisation de ce site :
               </p>
               <div className="bg-slate-900/50 rounded-xl p-4">
                 <h3 className="font-semibold text-white mb-3">
-                  Via le formulaire de contact :
+                  Via le formulaire de contact (collectées par moi) :
                 </h3>
                 <ul className="list-disc list-inside space-y-2 text-slate-400">
                   <li>
@@ -141,16 +141,28 @@ export default function PolitiqueDeConfidentialite() {
               </div>
               <div className="bg-slate-900/50 rounded-xl p-4">
                 <h3 className="font-semibold text-white mb-3">
-                  Données techniques automatiquement collectées :
+                  Données techniques collectées par les prestataires (si vous
+                  acceptez les cookies analytiques) :
                 </h3>
                 <ul className="list-disc list-inside space-y-2 text-slate-400">
-                  <li>Adresse IP (anonymisée)</li>
-                  <li>Type de navigateur et système d&apos;exploitation</li>
-                  <li>Pages visitées et durée de visite</li>
                   <li>
-                    Source de trafic (moteur de recherche, lien direct, etc.)
+                    <strong>Google Analytics</strong> - pages visitées, durée de
+                    visite, source de trafic (IP anonymisée)
+                  </li>
+                  <li>
+                    <strong>Cloudflare Turnstile</strong> - vérification
+                    anti-spam lors de l&apos;envoi du formulaire
+                  </li>
+                  <li>
+                    <strong>Hébergeur</strong> - logs serveur techniques (IP,
+                    navigateur)
                   </li>
                 </ul>
+                <p className="text-sm text-slate-500 mt-3">
+                  Je n&apos;ai pas accès direct à ces données techniques. Elles
+                  sont traitées par les prestataires concernés selon leurs
+                  propres politiques de confidentialité.
+                </p>
               </div>
             </div>
           </div>
