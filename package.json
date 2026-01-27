@@ -1,31 +1,55 @@
 {
-    "name": "jessy-david.dev",
-    "version": "1.0.0",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "eslint"
-    },
-    "dependencies": {
-        "@marsidev/react-turnstile": "^1.3.1",
-        "framer-motion": "^12.23.24",
-        "lucide-react": "^0.554.0",
-        "next": "16.0.3",
-        "nodemailer": "^7.0.10",
-        "react": "19.2.0",
-        "react-dom": "19.2.0"
-    },
-    "devDependencies": {
-        "@tailwindcss/postcss": "^4",
-        "@types/node": "^20",
-        "@types/nodemailer": "^7.0.4",
-        "@types/react": "^19",
-        "@types/react-dom": "^19",
-        "eslint": "^9",
-        "eslint-config-next": "16.0.3",
-        "tailwindcss": "^4",
-        "typescript": "^5"
-    }
+  "name": "jessy-david.dev",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site personnel et portfolio de Jessy David, développé avec Next.js, TypeScript et Tailwind CSS.",
+  "license": "MIT",
+  "author": {
+    "name": "Jessy David",
+    "email": "contact@jessy-david.dev",
+    "url": "https://jessy-david.dev"
+  },
+  "homepage": "https://jessy-david.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jessy-david-dev/jessy-david.dev"
+  },
+  "bugs": {
+    "url": "https://github.com/jessy-david-dev/jessy-david.dev/issues"
+  },
+  "keywords": [
+    "portfolio",
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "web developer",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@marsidev/react-turnstile": "^1.4.1",
+    "framer-motion": "^12.29.2",
+    "lucide-react": "^0.563.0",
+    "next": "16.1.5",
+    "nodemailer": "^7.0.13",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/node": "^25.0.10",
+    "@types/nodemailer": "^7.0.9",
+    "@types/react": "^19.2.10",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "16.1.5",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
+  }
 }
