@@ -1,5 +1,6 @@
 import Footer from "@/component/layout/Footer";
 import NavBar from "@/component/layout/NavBar";
+import CookieBanner from "@/component/ui/CookieBanner";
 import GridBackground from "@/component/ui/GridBackground";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
@@ -7,216 +8,257 @@ import { ReactNode } from "react";
 import "./globals.css";
 
 const inter = Inter({
-    subsets: ["latin"],
-    display: "swap",
-    variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
 });
 
 const siteConfig = {
-    name: "Jessy David",
-    title: "Jessy David | Développeur Web Full-Stack",
-    description:
-        "Développeur Web Full-Stack passionné, spécialisé en React, Next.js et Node.js. Création de sites web modernes, applications web performantes et solutions digitales sur mesure.",
-    url: "https://jessy-david.dev",
-    ogImage: "https://jessy-david.dev/og-image.jpg",
-    author: "Jessy David",
-    keywords: [
-        "développeur web",
-        "développeur full-stack",
-        "React",
-        "Next.js",
-        "Node.js",
-        "TypeScript",
-        "JavaScript",
-        "création site web",
-        "freelance",
-        "France",
-        "portfolio",
-        "Jessy David",
-    ],
-    twitterHandle: "@jessydavid",
+  name: "Jessy David",
+  title: "Jessy David | Développeur Web Full-Stack",
+  description:
+    "Développeur Web Full-Stack passionné, spécialisé en React, Next.js et Node.js. Création de sites web modernes, applications web performantes et solutions digitales sur mesure.",
+  url: "https://jessy-david.dev",
+  ogImage: "https://jessy-david.dev/og-image.jpg",
+  author: "Jessy David",
+  keywords: [
+    "développeur web",
+    "développeur full-stack",
+    "React",
+    "Next.js",
+    "Node.js",
+    "TypeScript",
+    "JavaScript",
+    "création site web",
+    "freelance",
+    "France",
+    "portfolio",
+    "Jessy David",
+  ],
+  twitterHandle: "@jessydavid",
 };
 
 export const metadata: Metadata = {
-    title: {
-        default: siteConfig.title,
-        template: `%s | ${siteConfig.name}`,
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  authors: [{ name: siteConfig.author, url: siteConfig.url }],
+  creator: siteConfig.author,
+  publisher: siteConfig.author,
+
+  metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: "/",
+    languages: {
+      "fr-FR": "/",
     },
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: siteConfig.title,
     description: siteConfig.description,
-    keywords: siteConfig.keywords,
-    authors: [{ name: siteConfig.author, url: siteConfig.url }],
-    creator: siteConfig.author,
-    publisher: siteConfig.author,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} - Portfolio Développeur Web`,
+        type: "image/jpeg",
+      },
+    ],
+  },
 
-    metadataBase: new URL(siteConfig.url),
-    alternates: {
-        canonical: "/",
-        languages: {
-            "fr-FR": "/",
-        },
-    },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    creator: siteConfig.twitterHandle,
+    images: [siteConfig.ogImage],
+  },
 
-    robots: {
-        index: true,
-        follow: true,
-        nocache: false,
-        googleBot: {
-            index: true,
-            follow: true,
-            noimageindex: false,
-            "max-video-preview": -1,
-            "max-image-preview": "large",
-            "max-snippet": -1,
-        },
-    },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      {
+        url: "/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
 
-    openGraph: {
-        type: "website",
-        locale: "fr_FR",
-        url: siteConfig.url,
-        siteName: siteConfig.name,
-        title: siteConfig.title,
-        description: siteConfig.description,
-        images: [
-            {
-                url: siteConfig.ogImage,
-                width: 1200,
-                height: 630,
-                alt: `${siteConfig.name} - Portfolio Développeur Web`,
-                type: "image/jpeg",
-            },
-        ],
-    },
+  manifest: "/site.webmanifest",
 
-    twitter: {
-        card: "summary_large_image",
-        title: siteConfig.title,
-        description: siteConfig.description,
-        creator: siteConfig.twitterHandle,
-        images: [siteConfig.ogImage],
-    },
+  category: "technology",
 
-    icons: {
-        icon: [
-            { url: "/favicon.ico", sizes: "any" },
-            { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-            { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-        ],
-        apple: [
-            {
-                url: "/apple-touch-icon.png",
-                sizes: "180x180",
-                type: "image/png",
-            },
-        ],
-    },
+  verification: {
+    google: "ton-code-google-search-console",
+  },
 
-    manifest: "/site.webmanifest",
-
-    category: "technology",
-
-    verification: {
-        google: "ton-code-google-search-console",
-    },
-
-    other: {
-        "msapplication-TileColor": "#0f172a",
-        "theme-color": "#0f172a",
-    },
+  other: {
+    "msapplication-TileColor": "#0f172a",
+    "theme-color": "#0f172a",
+  },
 };
 
 export const viewport: Viewport = {
-    themeColor: [
-        { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-        { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
-    ],
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-    colorScheme: "dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  colorScheme: "dark",
 };
 
 const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "WebSite",
-            "@id": `${siteConfig.url}/#website`,
-            url: siteConfig.url,
-            name: siteConfig.name,
-            description: siteConfig.description,
-            inLanguage: "fr-FR",
-        },
-        {
-            "@type": "Person",
-            "@id": `${siteConfig.url}/#person`,
-            name: siteConfig.name,
-            url: siteConfig.url,
-            image: siteConfig.ogImage,
-            jobTitle: "Développeur Web Full-Stack",
-            description: siteConfig.description,
-            sameAs: [
-                "https://github.com/jessydavid-dev",
-                "https://linkedin.com/in/jessy-david",
-                "https://twitter.com/jessydavid",
-            ],
-            knowsAbout: [
-                "React",
-                "Next.js",
-                "TypeScript",
-                "Node.js",
-                "JavaScript",
-                "Tailwind CSS",
-                "PostgreSQL",
-                "MongoDB",
-            ],
-        },
-        {
-            "@type": "ProfilePage",
-            "@id": `${siteConfig.url}/#profilepage`,
-            url: siteConfig.url,
-            name: `Portfolio de ${siteConfig.name}`,
-            description: siteConfig.description,
-            mainEntity: { "@id": `${siteConfig.url}/#person` },
-            inLanguage: "fr-FR",
-        },
-    ],
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteConfig.url}/#website`,
+      url: siteConfig.url,
+      name: siteConfig.name,
+      description: siteConfig.description,
+      inLanguage: "fr-FR",
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteConfig.url}/#person`,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      image: siteConfig.ogImage,
+      jobTitle: "Développeur Web Full-Stack",
+      description: siteConfig.description,
+      sameAs: [
+        "https://github.com/jessydavid-dev",
+        "https://linkedin.com/in/jessy-david",
+        "https://twitter.com/jessydavid",
+      ],
+      knowsAbout: [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "JavaScript",
+        "Tailwind CSS",
+        "PostgreSQL",
+        "MongoDB",
+      ],
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${siteConfig.url}/#profilepage`,
+      url: siteConfig.url,
+      name: `Portfolio de ${siteConfig.name}`,
+      description: siteConfig.description,
+      mainEntity: { "@id": `${siteConfig.url}/#person` },
+      inLanguage: "fr-FR",
+    },
+  ],
 };
 
 export default function RootLayout({
-    children,
+  children,
 }: Readonly<{
-    children: ReactNode;
+  children: ReactNode;
 }>) {
-    return (
-        <html lang="fr" className={inter.variable}>
-            <head>
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-                />
+  return (
+    <html lang="fr" className={inter.variable}>
+      <head>
+        {/* Google Tag Manager - Consent Mode par défaut */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              
+              // Consentement par défaut : tout refusé (RGPD compliant)
+              gtag('consent', 'default', {
+                'analytics_storage': 'denied',
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'wait_for_update': 500
+              });
+            `,
+          }}
+        />
+        {/* Google Tag Manager */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];
+              w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+              var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+              j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+              f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-TJDQ3XJD');
+            `,
+          }}
+        />
 
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link
-                    rel="preconnect"
-                    href="https://fonts.gstatic.com"
-                    crossOrigin="anonymous"
-                />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
 
-                <link
-                    rel="dns-prefetch"
-                    href="https://www.google-analytics.com"
-                />
-            </head>
-            <body className={`${inter.className} antialiased`}>
-                <GridBackground variant="light" />
-                <NavBar />
-                <main id="main-content" className="relative z-10">
-                    {children}
-                </main>
-                <Footer />
-            </body>
-        </html>
-    );
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+      </head>
+      <body className={`${inter.className} antialiased`}>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TJDQ3XJD"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+
+        <GridBackground variant="light" />
+        <NavBar />
+        <main id="main-content" className="relative z-10">
+          {children}
+        </main>
+        <Footer />
+        <CookieBanner />
+      </body>
+    </html>
+  );
 }
