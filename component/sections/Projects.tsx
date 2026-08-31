@@ -29,6 +29,13 @@ const projects = [
     link: "https://radio-box.app",
   },
   {
+    title: "NetKit",
+    description:
+      "Boîte à outils de diagnostic réseau.",
+    tags: ["Next.js", "TypeScript", "TailwindCSS"],
+    link: "https://netkit.jessy-david.dev",
+  },
+  {
     title: "QuantumCraft Studios",
     description:
       "Plateforme d'hébergement de serveurs de jeux avec panel d'administration complet.",
